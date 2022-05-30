@@ -1,0 +1,299 @@
+$color-main:#9356DC;
+$color-second:#FF79DA;
+$color-third:#99E2D0;
+/*Définition des classes récurentes*/
+body
+{
+    max-width: 1440px;
+    margin: auto;
+}
+.Shrikhand
+{
+    font-family: 'Shrikhand', sans-serif;
+}
+.Roboto
+{
+    font-family: 'Roboto', sans-serif;
+}
+.light
+{
+    font-weight: 300;
+}
+.bold
+{
+    font-weight: 500;
+}
+.extrabold
+{
+    font-weight: 700;
+}
+h2
+{
+    padding: 0;
+    margin: 0;
+}
+h3
+{
+    font-size: 4.5vw;
+    padding: 0;
+    margin: 0;
+}
+.center
+{
+    text-align: center;
+}
+.maxwidth
+{
+    width: 100%;
+}
+.white
+{
+    color: white;
+}
+.maxwidth> #brand /*placement du nom de l'entreprise*/
+{
+    padding: 4%;
+    font-size: 9vw;
+}
+#back_arrow
+{
+    padding-left: 5%;
+    margin-top: -11%;
+}
+#back_arrow>a
+{
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+}
+#foodpicture
+{
+    z-index: 1;
+    position: relative;
+    padding-top: 5%;
+    height: 250px;
+    object-fit: cover;
+}
+#courses
+{
+    box-sizing: border-box;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 60px 60px 0 0;
+    margin-top: -14.5%;
+    padding: 10% 5%;
+    background-color: rgb(246, 246, 246);
+}
+#head
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#head>#restaurantname
+{
+    font-size: 7.5vw;
+}
+.fa-heart
+{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 80%;
+    font-size: 1.6em;
+    cursor: pointer;
+    font-weight: 100;
+}
+.fa-heart:hover::before
+{
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 900;
+    background-image: linear-gradient($color-main,$color-second);
+    -webkit-text-fill-color: transparent;
+}
+.title
+{
+    padding: 8% 0 2% 0;
+    display: inline-block;
+    position: relative;
+}
+.title::after
+{
+    content: "";
+    width: 2.5rem;
+    height: 0.20rem;
+    background-color:$color-third;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#courses>#starter
+{
+    animation: fadein 2s;
+}
+#courses>#maincourse
+{
+    animation: fadein 4s;
+}
+#courses>#dessert
+{
+    animation: fadein 6s;
+}
+.food
+{
+    box-sizing: border-box;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgb(230, 230, 230);
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.subtitle
+{
+    font-size: 3.7vw;
+    padding-top: 1.5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.price
+{
+    font-size: 4vw;
+    margin-left: 85%;
+    margin-top: -5%;
+    padding: 0;
+}
+.food>.fa-circle-check
+{
+    display: none;
+}
+.food:hover>.fa-circle-check
+{
+    animation-name: spin;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    display: block;
+    position: absolute;
+    color: white;
+    margin-left: 78.5%;
+    margin-top:-5%;
+}
+.food:hover>.background
+{
+    position:absolute;
+    background-color: $color-third;
+    padding: 7.2% 6.6%;
+    margin-left: 75%;
+    margin-top:-12.7%;
+    border-radius: 0 10px 10px 0;   
+}
+
+.food:hover>.main
+{
+    width: 185px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.food:hover>.subtitle
+{
+    width: 185px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
+.food:hover>.price
+{
+    margin-left: 73%;
+}
+.button1
+{
+    cursor: pointer;
+    border: none;
+    margin: 0 auto;
+    width: 60%;
+    background-image: linear-gradient($color-second,$color-main) ;
+    border-radius: 35px;
+}
+#button
+{
+    margin-top: 15%;
+}
+#button>a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 4vw;
+    padding: 4% 10%;
+}
+footer
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    background-color: rgb(53, 53, 53);
+    padding: 3% 2% 10% 10%;
+}
+footer>#footertitle
+{
+    font-size: 5vw;
+    padding: 3% 0;
+}
+footer>.footer
+{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 0 1% 0;
+}
+.footer>.link
+{
+    font-size: 4.5vw;
+    padding: 0 3%;
+}
+.footer>#addrestaurant
+{
+    padding-left: 4.5%;
+}
+footer>.link1
+{
+    font-size: 4.5vw;
+    padding: 2% 0 1% 0;
+}
+.link>a
+{
+    text-decoration: none;
+    color: white;
+}
+.link1>a
+{
+    text-decoration: none;
+    color: white;
+}
+@keyframes fadein {
+    from { 
+        opacity: 0; 
+    }
+    to   { 
+        opacity: 1; 
+    }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@keyframes slide {
+    from {
+        margin-left: 0%;
+        width: 0%;
+    }
+    to {
+        margin-left: 75%;
+        width: 0%;
+    }
+
+}
