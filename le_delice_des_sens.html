@@ -4,7 +4,7 @@
         <title>Ohmyfood! - Le délice des sens </title>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width ,initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/style_menu.css">
+        <link rel="stylesheet" href="SASS/style_menu.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
     </head>
     <body>
         <header>
-            <div class="maxwidth shadow">
-                <div class="Shrikhand center" id="brand">ohmyfood</div>
+            <div class="maxwidth">
+                <div id="brand">ohmyfood</div>
             </div>
             <div id="back_arrow"><a href="index.html">
                 <i class="fa-solid fa-arrow-left fa-lg"></i>
@@ -27,102 +27,122 @@
         <!--Section du menu-->
         <section class="maxwidth" id="courses">
             <div id="head">
-                <h2 class="Shrikhand" id="restaurantname">Le délice des sens</h2>
+                <h2 id="restaurantname">Le délice des sens</h2>
                 <i class="fa-regular fa-heart fa-xl"></i>
             </div>
 
             <!--Entrées--> 
             <div id="starter">
-                <div class="Roboto light title">ENTRÉES</div>
+                <div class="title">ENTRÉES</div>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Tartare de thon</h3>
-                    <div class="Roboto light subtitle">Assaisonné au yuzu</div>
-                    <div class="Roboto extrabold price">25€</div>
-                    <div class="background"></div>
-                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                    <h3 class="main">Tartare de thon</h3>
+                    <div class="subtitle">Assaisonné au yuzu</div>
+                    <div class="price">25€</div>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Bouchée de homard croustillant</h3>
-                    <div class="Roboto light subtitle">Et sa farandole de petits légumes</div>
-                    <div class="Roboto extrabold price">35€</div>
+                    <h3 class="main">Bouchée de homard croustillant</h3>
+                    <div class="subtitle">Et sa farandole de petits légumes</div>
+                    <div class=" price">35€</div>
                     <div class="background"></div>
-                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Velouté de cèpes</h3>
-                    <div class="Roboto light subtitle">Aux truffes</div>
-                    <div class="Roboto extrabold price">20€</div>
+                    <h3 class="main">Velouté de cèpes</h3>
+                    <div class="subtitle">Aux truffes</div>
+                    <div class="price">20€</div>
                     <div class="background"></div>
-                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
             </div>
             <!--Plats-->
             <div id="maincourse">
-                <div class="Roboto light title" >PLATS</div>
+                <div class="title" >PLATS</div>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Poulet rôti aux herbes de Provence</h3>
-                    <div class="Roboto light subtitle">Et sa crème de truffe</div>
-                    <div class="Roboto extrabold price">40€</div>
+                    <h3 class="main">Poulet rôti aux herbes de Provence</h3>
+                    <div class="subtitle">Et sa crème de truffe</div>
+                    <div class="price">40€</div>
                     <div class="background"></div>
-                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Langouste rôtie</h3>
-                    <div class="Roboto light subtitle">Et ses légumes de saison</div>
-                    <div class="Roboto extrabold price">35€</div>
+                    <h3 class="main">Langouste rôtie</h3>
+                    <div class="subtitle">Et ses légumes de saison</div>
+                    <div class="price">35€</div>
                     <div class="background"></div>
-                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Côte de boeuf Angus</h3>
-                    <div class="Roboto light subtitle">Et sa purée de panais</div>
-                    <div class="Roboto extrabold price">44€</div>
+                    <h3 class="main">Côte de boeuf Angus</h3>
+                    <div class="subtitle">Et sa purée de panais</div>
+                    <div class="price">44€</div>
                     <div class="background"></div>
-                    <i class="fa-solid fa-circle-check fa-xl"></i>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
             </div>
             <!--Desserts-->
             <div id="dessert">
-                <div class="Roboto light title">DESSERTS</div>
+                <div class="title">DESSERTS</div>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Farandole de desserts</h3>
-                    <div class="Roboto light subtitle">Du chef</div>
-                    <div class="Roboto extrabold price">18€</div>
+                    <h3 class="main">Farandole de desserts</h3>
+                    <div class="subtitle">Du chef</div>
+                    <div class="price">18€</div>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Crème brulée</h3>
-                    <div class="Roboto light subtitle">Revisitée</div>
-                    <div class="Roboto extrabold price">22€</div>
+                    <h3 class="main">Crème brulée</h3>
+                    <div class="subtitle">Revisitée</div>
+                    <div class="price">22€</div>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
                 <article class="food">
-                    <h3 class="Roboto extrabold main">Tiramisu</h3>
-                    <div class="Roboto light subtitle">À la noisette</div>
-                    <div class="Roboto extrabold price">23€</div>
+                    <h3 class="main">Tiramisu</h3>
+                    <div class="subtitle">À la noisette</div>
+                    <div class="price">23€</div>
+                    <div class="select"> 
+                        <i class="fa-solid fa-circle-check fa-xl"></i>
+                    </div>
                 </article>
             </div>
-            <form class="center" id="button">
-                <a href="#" class="button1 Roboto bold">Commander</a>
+            <form id="button">
+                <a href="#" id="button1">Commander</a>
             </form>
         </section>
         <footer>
-            <div class="Shrikhand white" id="footertitle">ohmyfood</div>
+            <div id="footertitle">ohmyfood</div>
 
             <!--Proposer un restaurant-->
-            <div class="footer">
-                <i class="fa-solid fa-utensils white"></i>
-                <div class="Roboto bold white link" id="addrestaurant"><a href="#">Proposer un restaurant</a></div>
+            <div class="footercolumn">
+                <i class="fa-solid fa-utensils"></i>
+                <div class="link" id="addrestaurant"><a href="#">Proposer un restaurant</a></div>
             </div>
 
             <!-- Devenir partenaire-->
-            <div class="footer">
-                <i class="fa-solid fa-handshake-angle white"></i> 
-                <div class="Roboto bold white link"><a href="#">Devenir partenaire</a></div>
+            <div class="footercolumn">
+                <i class="fa-solid fa-handshake-angle"></i> 
+                <div class="link"><a href="#">Devenir partenaire</a></div>
             </div>
 
             <!--Mentions légales-->
-            <div class="Roboto light link1"><a href="#">Mentions légales</a></div>
+            <div class="link1"><a href="#">Mentions légales</a></div>
 
             <!--Contact-->
-            <div class="Roboto light link1"><a href="mailto:support@ohmyfood.com?">Contact</a></div>
+            <div class="link1"><a href="mailto:support@ohmyfood.com?">Contact</a></div>
         </footer>
     </body>
