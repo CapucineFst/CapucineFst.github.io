@@ -1,0 +1,35 @@
+$color-main:#9356DC;
+$color-second:#FF79DA;
+$color-third:#99E2D0;
+$white:white;
+$textnew:rgb(0 , 135, 102);
+$icon-color:rgb(126, 126, 126);
+@mixin light {
+    font-weight: 300;
+}
+@mixin bold {
+    font-weight: 500;
+}
+@mixin extrabold {
+    font-weight: 700;
+}
+@mixin center {
+    text-align: center;
+}
+@mixin main-boxshadow {
+    box-shadow: 0px 5px 5px rgba(230, 230, 230, 0.76);
+}
+@mixin whitelink {
+    text-decoration: none;
+    color: $white;
+}
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin dish-hover{
+    width: 72%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

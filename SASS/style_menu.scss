@@ -1,31 +1,14 @@
-$color-main:#9356DC;
-$color-second:#FF79DA;
-$color-third:#99E2D0;
+@import 'style.scss';
 /*Définition des classes récurentes*/
+header
+{
+    font-family: 'Shrikhand',sans-serif;
+}
 body
 {
     max-width: 1440px;
     margin: auto;
-}
-.Shrikhand
-{
-    font-family: 'Shrikhand', sans-serif;
-}
-.Roboto
-{
-    font-family: 'Roboto', sans-serif;
-}
-.light
-{
-    font-weight: 300;
-}
-.bold
-{
-    font-weight: 500;
-}
-.extrabold
-{
-    font-weight: 700;
+    font-family:'Roboto',sans-serif;
 }
 h2
 {
@@ -38,32 +21,24 @@ h3
     padding: 0;
     margin: 0;
 }
-.center
-{
-    text-align: center;
-}
 .maxwidth
 {
     width: 100%;
 }
-.white
-{
-    color: white;
-}
-.maxwidth> #brand /*placement du nom de l'entreprise*/
+#brand /*placement du nom de l'entreprise*/
 {
     padding: 4%;
     font-size: 9vw;
+    @include center;
 }
-#back_arrow
+#back_arrow /*flèche de retour à la page d'accueil*/
 {
     padding-left: 5%;
-    margin-top: -11%;
-}
-#back_arrow>a
-{
-    text-decoration: none;
-    color: rgb(53, 53, 53);
+    margin-top: -13%;
+    & > a {
+        text-decoration: none;
+        color: rgb(53, 53, 53);
+    }
 }
 #foodpicture
 {
@@ -84,16 +59,25 @@ h3
     margin-top: -14.5%;
     padding: 10% 5%;
     background-color: rgb(246, 246, 246);
+    & > #starter {
+        animation: fadein 2s;
+    }
+    & > #maincourse {
+        animation: fadein 4s;
+    }
+    & > #dessert {
+        animation: fadein 6s;
+    }
 }
 #head
 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-#head>#restaurantname
-{
-    font-size: 7.5vw;
+    & > #restaurantname {
+        font-size: 7.5vw;
+        font-family: 'Shrikhand',sans-serif;
+    }
 }
 .fa-heart
 {
@@ -103,44 +87,34 @@ h3
     font-size: 1.6em;
     cursor: pointer;
     font-weight: 100;
-}
-.fa-heart:hover::before
-{
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-weight: 900;
-    background-image: linear-gradient($color-main,$color-second);
-    -webkit-text-fill-color: transparent;
+    &:hover { /*animation du coeur au survol*/
+        &::before {
+            transition: all .1s ease-in-out;
+            background-clip: text;
+            -webkit-background-clip: text;
+            font-weight: 900;
+            background-image: linear-gradient($color-main, $color-second);
+            -webkit-text-fill-color: transparent;
+        }
+    }
 }
 .title
 {
     padding: 8% 0 2% 0;
     display: inline-block;
     position: relative;
+    @include light;
+    &::after {
+        content: "";
+        width: 2.5rem;
+        height: 0.20rem;
+        background-color:$color-third;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
 }
-.title::after
-{
-    content: "";
-    width: 2.5rem;
-    height: 0.20rem;
-    background-color:$color-third;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-#courses>#starter
-{
-    animation: fadein 2s;
-}
-#courses>#maincourse
-{
-    animation: fadein 4s;
-}
-#courses>#dessert
-{
-    animation: fadein 6s;
-}
-.food
+.food /*Reglage des articles*/
 {
     box-sizing: border-box;
     padding: 2%;
@@ -148,127 +122,127 @@ h3
     box-shadow: 0px 5px 10px rgb(230, 230, 230);
     margin-top: 3%;
     margin-bottom: 3%;
-}
-.subtitle
-{
-    font-size: 3.7vw;
-    padding-top: 1.5%;
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    & > .subtitle { /*accompagnements*/
+        font-size: 3.7vw;
+        padding-top: 1.5%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include light;
+    }
+    & > .price { /*prix*/
+        font-size: 4vw;
+        margin-left: 85%;
+        margin-top: -5%;
+        padding: 0;
+        @include extrabold;
+    }
+    & > .select {
+        & > .fa-circle-check {
+            display: none;
+        }
+    }
+    &:hover { /*animation lors du survol*/
+        & > .select { /*slide verte*/
+            animation-name: slide;
+            animation-duration: 0.3s;
+            animation-timing-function: linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position:absolute;
+            background-color: $color-third;
+            width: 13.2%;
+            height: 5.9%;
+            margin-left: 75%;
+            margin-top: -13.3%;
+            border-radius: 0 10px 10px 0;
+            & > .fa-circle-check { /*coche blanche*/
+                animation-name: spin;
+                animation-duration: 0.3s;
+                animation-delay: 0.1s;
+                animation-timing-function: linear;
+                display: block;
+                color: $white;
+            }
+        }
+        & > .main { /*plat*/
+            @include dish-hover;
+            @include extrabold;
+        }
+        & > .subtitle { /*accompagnement*/
+            @include dish-hover;
+            @include light;
+        }
+        & > .price { /*prix*/
+            margin-left: 76%;
+            @include extrabold;
+        }
+    }
 }
-.price
-{
-    font-size: 4vw;
-    margin-left: 85%;
-    margin-top: -5%;
-    padding: 0;
-}
-.food>.fa-circle-check
-{
-    display: none;
-}
-.food:hover>.fa-circle-check
-{
-    animation-name: spin;
-    animation-duration: 0.3s;
-    animation-timing-function: linear;
-    display: block;
-    position: absolute;
-    color: white;
-    margin-left: 78.5%;
-    margin-top:-5%;
-}
-.food:hover>.background
-{
-    position:absolute;
-    background-color: $color-third;
-    padding: 7.2% 6.6%;
-    margin-left: 75%;
-    margin-top:-12.7%;
-    border-radius: 0 10px 10px 0;   
-}
-
-.food:hover>.main
-{
-    width: 185px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.food:hover>.subtitle
-{
-    width: 185px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-} 
-.food:hover>.price
-{
-    margin-left: 73%;
-}
-.button1
-{
-    cursor: pointer;
-    border: none;
-    margin: 0 auto;
-    width: 60%;
-    background-image: linear-gradient($color-second,$color-main) ;
-    border-radius: 35px;
-}
-#button
-{
-    margin-top: 15%;
-}
-#button>a
-{
-    text-decoration: none;
-    color: white;
-    font-size: 4vw;
-    padding: 4% 10%;
+#button { /*bouton "commander"*/
+    @include center;
+    margin-top: 10%;
+    & > a {
+        text-decoration: none;
+        color: $white;
+        font-size: 4.5vw;
+        padding: 4% 12%;
+    }
+    & > #button1 {
+        cursor: pointer;
+        border: none;
+        margin: 0 auto;
+        width: 60%;
+        background-image: linear-gradient($color-main,$color-second) ;
+        border-radius: 35px;
+        @include bold;
+        &:hover {
+            background-image: linear-gradient($color-second,$color-main);
+        }
+    }
 }
 footer
 {
-    display: flex;
-    flex-direction: column;
-    margin-top: 15%;
+    @include flex-column;
+    margin-top: 12%;
     background-color: rgb(53, 53, 53);
     padding: 3% 2% 10% 10%;
-}
-footer>#footertitle
-{
-    font-size: 5vw;
-    padding: 3% 0;
-}
-footer>.footer
-{
-    display: flex;
-    flex-direction: row;
-    padding: 2% 0 1% 0;
-}
-.footer>.link
-{
-    font-size: 4.5vw;
-    padding: 0 3%;
-}
-.footer>#addrestaurant
-{
-    padding-left: 4.5%;
-}
-footer>.link1
-{
-    font-size: 4.5vw;
-    padding: 2% 0 1% 0;
-}
-.link>a
-{
-    text-decoration: none;
-    color: white;
-}
-.link1>a
-{
-    text-decoration: none;
-    color: white;
+    & > #footertitle {
+        font-family: 'Shrikhand',sans-serif;
+        color: $white;
+        font-size: 5vw;
+        padding: 3% 0;
+    }
+    & > .footercolumn {
+        display: flex;
+        padding: 2% 0 1% 0;
+        & > .link {
+            font-size: 4.5vw;
+            padding: 0 3%;
+            @include bold;
+            cursor: pointer;
+            & > a {
+                @include whitelink;
+            }
+        }
+        & > #addrestaurant {
+            padding-left: 4.5%;
+        }
+        & > .fa-solid {
+            color: $white;
+        }
+    }
+    & > .link1 {
+        font-size: 4.5vw;
+        padding: 2% 0 1% 0;
+        @include light;
+        cursor: pointer;
+        & > a {
+            @include whitelink;
+        }
+    }
 }
 @keyframes fadein {
     from { 
@@ -286,14 +260,23 @@ footer>.link1
         transform:rotate(360deg);
     }
 }
-@keyframes slide {
-    from {
-        margin-left: 0%;
-        width: 0%;
-    }
-    to {
-        margin-left: 75%;
-        width: 0%;
-    }
+@keyframes slidein {
+    0%{
+        transform: translateX(10px);
 
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes slide {
+    0%{
+        margin-left: 89%;
+        width:0%;
+
+    }
+    100% {
+        margin-left: 75%;
+        width: 13.2%;
+    }
 }
