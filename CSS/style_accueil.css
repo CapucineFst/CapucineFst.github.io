@@ -70,9 +70,6 @@ body {
   font-weight: 300;
 }
 
-#button {
-  /*bouton "explorer nos restaurants"*/
-}
 
 #button > a {
   text-decoration: none;
@@ -275,10 +272,6 @@ body {
   font-size: 1.6em;
   cursor: pointer;
   font-weight: 100;
-}
-
-.fa-heart:hover {
-  /*animation du coeur au survol*/
 }
 
 .fa-heart:hover::before {

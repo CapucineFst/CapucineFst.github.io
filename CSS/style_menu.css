@@ -110,9 +110,6 @@ h3 {
   font-weight: 100;
 }
 
-.fa-heart:hover {
-  /*animation du coeur au survol*/
-}
 
 .fa-heart:hover::before {
   -webkit-transition: all .1s ease-in-out;
@@ -177,9 +174,6 @@ h3 {
   display: none;
 }
 
-.food:hover {
-  /*animation lors du survol*/
-}
 
 .food:hover > .select {
   /*slide verte*/
