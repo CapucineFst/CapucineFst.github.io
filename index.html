@@ -4,7 +4,7 @@
         <title>Ohmyfood! - Restaurants Gastronomiques</title>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width ,initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/style_accueil.css">
+        <link rel="stylesheet" href="SASS/style_accueil.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
@@ -13,72 +13,72 @@
     <body>
         <header>
 			<!-- Partie haute-->
-            <div class="maxwidth shadow">
-                <div class="Shrikhand center" id="brand">ohmyfood</div>
+            <div class="maxwidth">
+                <div id="brand">ohmyfood</div>
             </div>
         </header>
 
         <!--Nom de la ville-->
         <div class="maxwidth location">
             <i class="fa-solid fa-location-dot"></i>
-            <div class="center Roboto bold" id="town">Paris, Belleville</div>
+            <div id="town">Paris, Belleville</div>
         </div>
 
         <!--Bouton-->
         <div class="maxwidth explore">
-            <div class="center Roboto extrabold" id="title">Réservez le menu qui vous convient</div>
-            <div class="center Roboto light" id="subtitle">Découvrez des restaurants d'exception, séléctionnés par nos soins.</div>
-            <form class="center" id="button">
-                <a href="#restaurantchoice" class="button1 Roboto bold">Explorer nos restaurants</a>
+            <div id="title">Réservez le menu qui vous convient</div>
+            <div id="subtitle">Découvrez des restaurants d'exception, séléctionnés par nos soins.</div>
+            <form id="button">
+                <a href="#restaurantchoice" id="button1">Explorer nos restaurants</a>
             </form>
         </div>
         <section id="manual">
-                <h2 class="Roboto extrabold sectionname">Fonctionnement</h2>
+                <h2 class="sectionname">Fonctionnement</h2>
                
                 <!-- Etape 1-->
-                <div class="Roboto bold stepnumber">1</div>
+                <div class="stepnumber">1</div>
                 <i class="fa-solid fa-mobile-screen-button fa-lg stepicons darkgrey"></i>
-                <div class="Roboto bold center stepname">Choisissez un restaurant</div>
+                <div class="stepname">Choisissez un restaurant</div>
                 
                 <!-- Etape 2-->
-                <div class="Roboto bold stepnumber">2</div>
+                <div class="stepnumber">2</div>
                 <div id="menuicon">
-                    <i class="fa-solid fa-ellipsis-vertical fa-lg darkgrey" id="dotmenu"></i> 
-                    <i class="fa-solid fa-bars fa-lg darkgrey" id="barsmenu"></i>
+                    <i class="fa-solid fa-ellipsis-vertical fa-lg darkgrey"></i> 
+                    <i class="fa-solid fa-bars fa-lg darkgrey"></i>
                 </div>
-                <div class="Roboto bold center stepname">Composez votre menu</div>
+                <div class="stepname">Composez votre menu</div>
 
                 <!--Etape 3-->
-                <div class="Roboto bold stepnumber">3</div>
+                <div class="stepnumber">3</div>
                 <i class="fa-solid fa-store fa-lg stepicons" id="purple"></i>
-                <div class="Roboto bold center stepname">Dégustez au restaurant</div>
+                <div class="stepname">Dégustez au restaurant</div>
         </section>
         <section id="restaurantchoice" class="maxwidth">
-            <h2 class="Roboto extrabold sectionname">Restaurants</h2>
+            <h2 class="sectionname">Restaurants</h2>
             <div id="place" class="maxwidth">
              <!--La palette du gout-->
-            <div class="Roboto bold darkgreen new">Nouveau</div>
-                <article class="maxwidth article article1"><a href="la_palette_du_gout.html">
+                <article class="maxwidth article"><a href="la_palette_du_gout.html">
                     <div>
-                        <img src="restaurants/palette_du_gout.jpg" alt="Palette du Gout" class="size size1 maxwidth">
+                        <img src="restaurants/palette_du_gout.jpg" alt="Palette du Gout" class="size maxwidth">
                     </div>
+                    <div class="new">Nouveau</div>
                     <div class="description">
-                        <h3 class="Roboto extrabold restaurantname">La palette du goût</h3>
-                        <div class="Roboto light dishname">Ménilmontant</div>
+                        <h3 class="restaurantname">La palette du goût</h3>
+                        <div class="dishname">Ménilmontant</div>
                         <i class="fa-regular fa-heart fa-xl"></i>
                     </div>
                 </a>
                 </article>
 
                 <!-- La note enchantée-->
-                <div class="Roboto bold darkgreen new">Nouveau</div>
-                <article class="maxwidth article article1"><a href="la_note_enchantee.html">
+                <article class="maxwidth article"><a href="la_note_enchantee.html">
                     <div>
-                        <img src="restaurants/la_note_enchantee.jpg" alt="La note enchantée" class="size size1 maxwidth">
+                        <img src="restaurants/la_note_enchantee.jpg" alt="La note enchantée" class="size maxwidth">
                     </div>
+                    <div class="new">Nouveau</div>
                     <div class="description">
-                        <h3 class="Roboto extrabold restaurantname">La note enchantée</h3>
-                        <div class="Roboto light dishname">Charonne</div>
+                        <h3 class="restaurantname">La note enchantée</h3>
+                        <div class="dishname">Charonne</div>
                         <i class="fa-regular fa-heart fa-xl"></i>
                     </div>
                 </a>
@@ -90,8 +90,8 @@
                         <img src="restaurants/a_la_francaise.jpg" alt="À la française" class="size maxwidth">
                     </div>
                     <div class="description">
-                        <h3 class="Roboto extrabold restaurantname">À la française</h3>
-                        <div class="Roboto light dishname">Cité Rouge</div>
+                        <h3 class="restaurantname">À la française</h3>
+                        <div class="dishname">Cité Rouge</div>
                         <i class="fa-regular fa-heart fa-xl"></i>
                     </div>
                 </a>
@@ -103,8 +103,8 @@
                         <img src="restaurants/le_delice_des_sens.jpg" alt="Le délice des sens" class="size maxwidth">
                     </div>
                     <div class="description">
-                        <h3 class="Roboto extrabold restaurantname">Le délice des sens</h3>
-                        <div class="Roboto light dishname">Folie-Méricourt</div>
+                        <h3 class="restaurantname">Le délice des sens</h3>
+                        <div class="dishname">Folie-Méricourt</div>
                         <i class="fa-regular fa-heart fa-xl"></i>
                     </div>
                 </a>
@@ -112,25 +112,25 @@
             </div>
         </section>
         <footer>
-            <div class="Shrikhand white" id="footertitle">ohmyfood</div>
+            <div id="footertitle">ohmyfood</div>
 
             <!--Proposer un restaurant-->
-            <div class="footer">
-                <i class="fa-solid fa-utensils white"></i>
-                <div class="Roboto bold white link" id="addrestaurant"><a href="#">Proposer un restaurant</a></div>
+            <div class="footercolumn">
+                <i class="fa-solid fa-utensils"></i>
+                <div class="link" id="addrestaurant"><a href="#">Proposer un restaurant</a></div>
             </div>
 
             <!-- Devenir partenaire-->
-            <div class="footer">
-                <i class="fa-solid fa-handshake-angle white"></i> 
-                <div class="Roboto bold white link"><a href="#">Devenir partenaire</a></div>
+            <div class="footercolumn">
+                <i class="fa-solid fa-handshake-angle"></i> 
+                <div class="link"><a href="#">Devenir partenaire</a></div>
             </div>
 
             <!--Mentions légales-->
-            <div class="Roboto light link1"><a href="#">Mentions légales</a></div>
+            <div class="link1"><a href="#">Mentions légales</a></div>
 
             <!--Contact-->
-            <div class="Roboto light link1"><a href="mailto:support@ohmyfood.com?">Contact</a></div>
+            <div class="link1"><a href="mailto:support@ohmyfood.com?">Contact</a></div>
         </footer>
         <span class="loader"></span>
     </body>
