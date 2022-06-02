@@ -64,7 +64,7 @@ h3 {
           flex-direction: column;
   border-radius: 60px 60px 0 0;
   margin-top: -14.5%;
-  padding: 10% 5%;
+  padding: 10% 5% 20% 5%;
   background-color: #f6f6f6;
 }
 
@@ -110,6 +110,9 @@ h3 {
   font-weight: 100;
 }
 
+.fa-heart:hover {
+  /*animation du coeur au survol*/
+}
 
 .fa-heart:hover::before {
   -webkit-transition: all .1s ease-in-out;
@@ -174,6 +177,9 @@ h3 {
   display: none;
 }
 
+.food:hover {
+  /*animation lors du survol*/
+}
 
 .food:hover > .select {
   /*slide verte*/
@@ -199,6 +205,7 @@ h3 {
   margin-left: 75%;
   margin-top: -13.3%;
   border-radius: 0 10px 10px 0;
+  overflow: hidden;
 }
 
 .food:hover > .select > .fa-circle-check {
@@ -276,7 +283,6 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 12%;
   background-color: #353535;
   padding: 3% 2% 10% 10%;
 }
