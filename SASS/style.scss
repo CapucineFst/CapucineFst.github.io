@@ -33,3 +33,9 @@ $icon-color:rgb(126, 126, 126);
     overflow: hidden;
     text-overflow: ellipsis;
 }
+@mixin dish{
+    width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
