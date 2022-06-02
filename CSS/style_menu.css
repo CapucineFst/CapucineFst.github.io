@@ -145,8 +145,9 @@ h3 {
 .food {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 2%;
+  padding: 10px;
   border-radius: 10px;
+  width: 100%;
   -webkit-box-shadow: 0px 5px 10px #e6e6e6;
           box-shadow: 0px 5px 10px #e6e6e6;
   margin-top: 3%;
@@ -154,21 +155,33 @@ h3 {
   overflow: hidden;
 }
 
+.food > .main {
+  font-size: 17px;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .food > .subtitle {
   /*accompagnements*/
-  font-size: 3.7vw;
-  padding-top: 1.5%;
+  font-size: 14px;
+  padding-top: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 300;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .food > .price {
   /*prix*/
-  font-size: 4vw;
+  font-size: 15px;
   margin-left: 85%;
-  margin-top: -5%;
+  margin-top: -17px;
   padding: 0;
   font-weight: 700;
 }
@@ -200,10 +213,10 @@ h3 {
           align-items: center;
   position: absolute;
   background-color: #99E2D0;
-  width: 13.2%;
-  height: 5.9%;
-  margin-left: 75%;
-  margin-top: -13.3%;
+  width: 13.5%;
+  height: 62.8px;
+  margin-left: 74%;
+  margin-top: -52.8px;
   border-radius: 0 10px 10px 0;
   overflow: hidden;
 }
@@ -268,11 +281,17 @@ h3 {
   background-image: linear-gradient(#9356DC, #FF79DA);
   border-radius: 35px;
   font-weight: 500;
+  -webkit-box-shadow: 0px 5px 10px #c5c5c5;
+          box-shadow: 0px 5px 10px #c5c5c5;
 }
 
 #button > #button1:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-box-shadow: 0px 5px 10px #aaaaaa;
+          box-shadow: 0px 5px 10px #aaaaaa;
 }
 
 footer {
@@ -401,8 +420,8 @@ footer > .link1 > a {
     width: 0%;
   }
   100% {
-    margin-left: 75%;
-    width: 13.2%;
+    margin-left: 74%;
+    width: 13.5%;
   }
 }
 
@@ -412,8 +431,8 @@ footer > .link1 > a {
     width: 0%;
   }
   100% {
-    margin-left: 75%;
-    width: 13.2%;
+    margin-left: 74%;
+    width: 13.5%;
   }
 }
 /*# sourceMappingURL=style_menu.css.map */

@@ -70,6 +70,9 @@ body {
   font-weight: 300;
 }
 
+#button {
+  /*bouton "explorer nos restaurants"*/
+}
 
 #button > a {
   text-decoration: none;
@@ -87,11 +90,17 @@ body {
   background-image: linear-gradient(#9356DC, #FF79DA);
   border-radius: 35px;
   font-weight: 500;
+  -webkit-box-shadow: 0px 5px 10px #c5c5c5;
+          box-shadow: 0px 5px 10px #c5c5c5;
 }
 
 #button > #button1:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-box-shadow: 0px 5px 10px #aaaaaa;
+          box-shadow: 0px 5px 10px #aaaaaa;
 }
 
 #manual {
@@ -274,6 +283,10 @@ body {
   font-weight: 100;
 }
 
+.fa-heart:hover {
+  /*animation du coeur au survol*/
+}
+
 .fa-heart:hover::before {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
@@ -342,5 +355,118 @@ footer > .link1 {
 footer > .link1 > a {
   text-decoration: none;
   color: white;
+}
+
+#spinner {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(244, 241, 241, 0.9);
+  -webkit-animation: loader .3s;
+          animation: loader .3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#spinner > #spinnerbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#spinner > #spinnerbox > .item {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  -webkit-animation: jumpy 1s;
+          animation: jumpy 1s;
+}
+
+#spinner > #spinnerbox > #item1 {
+  background-color: #9356DC;
+}
+
+#spinner > #spinnerbox > #item2 {
+  background-color: #FF79DA;
+}
+
+#spinner > #spinnerbox > #item3 {
+  background-color: #99E2D0;
+}
+
+@-webkit-keyframes loader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes loader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@-webkit-keyframes jumpy {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  75% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes jumpy {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  75% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 /*# sourceMappingURL=style_accueil.css.map */
