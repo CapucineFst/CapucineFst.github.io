@@ -1,0 +1,534 @@
+@charset "UTF-8";
+/*Définition des classes récurentes*/
+header {
+  font-family: 'Shrikhand',sans-serif;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+  font-family: 'Roboto',sans-serif;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  font-size: 4.5vw;
+  padding: 0;
+  margin: 0;
+}
+
+.maxwidth {
+  width: 100%;
+}
+
+#brand {
+  padding: 4%;
+  font-size: 9vw;
+  text-align: center;
+}
+
+#back_arrow {
+  padding-left: 5%;
+  margin-top: -13%;
+}
+
+#back_arrow > a {
+  text-decoration: none;
+  color: #353535;
+}
+
+#foodpicture {
+  z-index: 1;
+  position: relative;
+  padding-top: 5%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#courses {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 2;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 60px 60px 0 0;
+  margin-top: -14.5%;
+  padding: 10% 5% 20% 5%;
+  background-color: #f6f6f6;
+}
+
+#courses > #starter {
+  -webkit-animation: fadein 2s;
+          animation: fadein 2s;
+}
+
+#courses > #maincourse {
+  -webkit-animation: fadein 4s;
+          animation: fadein 4s;
+}
+
+#courses > #dessert {
+  -webkit-animation: fadein 6s;
+          animation: fadein 6s;
+}
+
+#head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#head > #restaurantname {
+  font-size: 7.5vw;
+  font-family: 'Shrikhand',sans-serif;
+}
+
+.fa-heart {
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 80%;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 100;
+}
+
+.fa-heart:hover {
+  /*animation du coeur au survol*/
+}
+
+.fa-heart:hover::before {
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: 900;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-text-fill-color: transparent;
+}
+
+.title {
+  padding: 8% 0 2% 0;
+  display: inline-block;
+  position: relative;
+  font-weight: 300;
+}
+
+.title::after {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.food {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 10px #e6e6e6;
+          box-shadow: 0px 5px 10px #e6e6e6;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  overflow: hidden;
+}
+
+.food > .main {
+  font-size: 17px;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.food > .subtitle {
+  /*accompagnements*/
+  font-size: 14px;
+  padding-top: 5px;
+  font-weight: 300;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.food > .price {
+  /*prix*/
+  font-size: 15px;
+  margin-left: 85%;
+  margin-top: -17px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.food > .select > .fa-circle-check {
+  display: none;
+}
+
+.food:hover {
+  /*animation lors du survol*/
+}
+
+.food:hover > .select {
+  /*slide verte*/
+  -webkit-animation-name: slide 0.3s linear;
+          animation-name: slide 0.3s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #99E2D0;
+  width: 13.5%;
+  height: 62.8px;
+  margin-left: 74%;
+  margin-top: -52.8px;
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+}
+
+.food:hover > .select > .fa-circle-check {
+  /*coche blanche*/
+  -webkit-animation: spin 0.3s linear 0.1s;
+          animation: spin 0.3s linear 0.1s;
+  display: block;
+  color: white;
+}
+
+.food:hover > .main {
+  /*plat*/
+  width: 72%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
+
+.food:hover > .subtitle {
+  /*accompagnement*/
+  width: 72%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+}
+
+.food:hover > .price {
+  /*prix*/
+  -webkit-animation: slidein 0.3s linear;
+          animation: slidein 0.3s linear;
+  margin-left: 76%;
+  font-weight: 700;
+}
+
+#button {
+  /*bouton "commander"*/
+  text-align: center;
+  margin-top: 10%;
+}
+
+#button > a {
+  text-decoration: none;
+  color: white;
+  font-size: 4.5vw;
+  padding: 4% 12%;
+}
+
+#button > #button1 {
+  cursor: pointer;
+  border: none;
+  margin: 0 auto;
+  width: 60%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  border-radius: 35px;
+  font-weight: 500;
+  -webkit-box-shadow: 0px 5px 10px #c5c5c5;
+          box-shadow: 0px 5px 10px #c5c5c5;
+}
+
+#button > #button1:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-box-shadow: 0px 5px 10px #aaaaaa;
+          box-shadow: 0px 5px 10px #aaaaaa;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #353535;
+  padding: 3% 2% 10% 10%;
+}
+
+footer > #footertitle {
+  font-family: 'Shrikhand',sans-serif;
+  color: white;
+  font-size: 5vw;
+  padding: 3% 0;
+}
+
+footer > .footercolumn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2% 0 1% 0;
+}
+
+footer > .footercolumn > .link {
+  font-size: 4.5vw;
+  padding: 0 3%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+footer > .footercolumn > .link > a {
+  text-decoration: none;
+  color: white;
+}
+
+footer > .footercolumn > #addrestaurant {
+  padding-left: 4.5%;
+}
+
+footer > .footercolumn > .fa-solid {
+  color: white;
+}
+
+footer > .link1 {
+  font-size: 4.5vw;
+  padding: 2% 0 1% 0;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+footer > .link1 > a {
+  text-decoration: none;
+  color: white;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    margin-left: 85%;
+  }
+  100% {
+    margin-left: 76%;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: 85%;
+  }
+  100% {
+    margin-left: 76%;
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    margin-left: 89%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 74%;
+    width: 13.5%;
+  }
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 89%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 74%;
+    width: 13.5%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  #brand {
+    font-size: 5vw;
+    padding: 2%;
+  }
+  #back_arrow {
+    padding-left: 5%;
+    margin-top: -8%;
+    font-size: 3vw;
+  }
+  #foodpicture {
+    padding-top: 3%;
+    height: 450px;
+  }
+  #courses {
+    padding: 5% 5% 18% 5%;
+  }
+  #head > #restaurantname {
+    font-size: 5.5vw;
+  }
+  .fa-heart {
+    margin-top: 2%;
+    margin-left: 80%;
+    font-size: 4.5vw;
+  }
+  .title {
+    padding: 5% 0 2% 0;
+    font-size: 3vw;
+  }
+  .title::after {
+    content: "";
+    width: 9vw;
+    height: 0.5vh;
+  }
+  .food > .main {
+    font-size: 25px;
+  }
+  .food > .subtitle {
+    /*accompagnements*/
+    font-size: 20px;
+  }
+  .food > .price {
+    /*prix*/
+    font-size: 22px;
+    margin-top: -23px;
+  }
+  .food > .select > .fa-circle-check {
+    display: none;
+    font-size: 4vw;
+  }
+  .food:hover {
+    /*animation lors du survol*/
+  }
+  .food:hover > .select {
+    /*slide verte*/
+    -webkit-animation: slide1 0.3s linear;
+            animation: slide1 0.3s linear;
+    width: 14.7%;
+    height: 83.5px;
+    margin-top: -73px;
+  }
+  #button {
+    /*bouton "commander"*/
+    margin-top: 12%;
+  }
+  #button > a {
+    font-size: 3.5vw;
+    padding: 4% 11%;
+  }
+  footer {
+    padding: 3% 2% 5% 5%;
+  }
+  footer > #footertitle {
+    font-size: 30px;
+    padding: 2% 0;
+  }
+  footer > .footercolumn {
+    padding: 1% 0 1% 0;
+    font-size: 25px;
+  }
+  footer > .footercolumn > .link {
+    font-size: 25px;
+  }
+  footer > .link1 {
+    font-size: 25px;
+    padding: 1% 0 1% 0;
+  }
+}
+
+@-webkit-keyframes slide1 {
+  0% {
+    margin-left: 89%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 74%;
+    width: 14.5%;
+  }
+}
+
+@keyframes slide1 {
+  0% {
+    margin-left: 89%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 74%;
+    width: 14.5%;
+  }
+}
+/*# sourceMappingURL=style_menu.css.map */
