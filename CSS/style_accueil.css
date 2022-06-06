@@ -427,10 +427,14 @@ footer > .link1 > a {
 
 #spinner > #spinnerbox > #item2 {
   background-color: #FF79DA;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 #spinner > #spinnerbox > #item3 {
   background-color: #99E2D0;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 @-webkit-keyframes loader {
