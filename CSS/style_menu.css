@@ -103,9 +103,9 @@ h3 {
 
 .fa-heart {
   position: absolute;
-  margin-top: 5%;
+  margin-top: 2.5%;
   margin-left: 80%;
-  font-size: 1.6em;
+  font-size: 25px;
   cursor: pointer;
   font-weight: 100;
 }
@@ -134,8 +134,8 @@ h3 {
 
 .title::after {
   content: "";
-  width: 2.5rem;
-  height: 0.20rem;
+  width: 40px;
+  height: 3px;
   background-color: #99E2D0;
   position: absolute;
   left: 0;
@@ -167,9 +167,6 @@ h3 {
   /*accompagnements*/
   font-size: 14px;
   padding-top: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-weight: 300;
   width: 85%;
   white-space: nowrap;
@@ -196,12 +193,8 @@ h3 {
 
 .food:hover > .select {
   /*slide verte*/
-  -webkit-animation-name: slide;
-          animation-name: slide;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  -webkit-animation-name: slide 0.3s linear;
+          animation-name: slide 0.3s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,14 +216,8 @@ h3 {
 
 .food:hover > .select > .fa-circle-check {
   /*coche blanche*/
-  -webkit-animation-name: spin;
-          animation-name: spin;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  -webkit-animation: spin 0.3s linear 0.1s;
+          animation: spin 0.3s linear 0.1s;
   display: block;
   color: white;
 }
@@ -255,6 +242,8 @@ h3 {
 
 .food:hover > .price {
   /*prix*/
+  -webkit-animation: slidein 0.3s linear;
+          animation: slidein 0.3s linear;
   margin-left: 76%;
   font-weight: 700;
 }
@@ -394,23 +383,19 @@ footer > .link1 > a {
 
 @-webkit-keyframes slidein {
   0% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    margin-left: 85%;
   }
   100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    margin-left: 76%;
   }
 }
 
 @keyframes slidein {
   0% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    margin-left: 85%;
   }
   100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    margin-left: 76%;
   }
 }
 
@@ -433,6 +418,117 @@ footer > .link1 > a {
   100% {
     margin-left: 74%;
     width: 13.5%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  #brand {
+    font-size: 5vw;
+    padding: 2%;
+  }
+  #back_arrow {
+    padding-left: 5%;
+    margin-top: -8%;
+    font-size: 3vw;
+  }
+  #foodpicture {
+    padding-top: 3%;
+    height: 450px;
+  }
+  #courses {
+    padding: 5% 5% 18% 5%;
+  }
+  #head > #restaurantname {
+    font-size: 5.5vw;
+  }
+  .fa-heart {
+    margin-top: 2%;
+    margin-left: 80%;
+    font-size: 4.5vw;
+  }
+  .title {
+    padding: 5% 0 2% 0;
+    font-size: 3vw;
+  }
+  .title::after {
+    content: "";
+    width: 9vw;
+    height: 0.5vh;
+  }
+  .food > .main {
+    font-size: 25px;
+  }
+  .food > .subtitle {
+    /*accompagnements*/
+    font-size: 20px;
+  }
+  .food > .price {
+    /*prix*/
+    font-size: 22px;
+    margin-top: -23px;
+  }
+  .food > .select > .fa-circle-check {
+    display: none;
+    font-size: 4vw;
+  }
+  .food:hover {
+    /*animation lors du survol*/
+  }
+  .food:hover > .select {
+    /*slide verte*/
+    -webkit-animation: slide1 0.3s linear;
+            animation: slide1 0.3s linear;
+    width: 14.7%;
+    height: 83.5px;
+    margin-top: -73px;
+  }
+  #button {
+    /*bouton "commander"*/
+    margin-top: 12%;
+  }
+  #button > a {
+    font-size: 3.5vw;
+    padding: 4% 11%;
+  }
+  footer {
+    padding: 3% 2% 5% 5%;
+  }
+  footer > #footertitle {
+    font-size: 30px;
+    padding: 2% 0;
+  }
+  footer > .footercolumn {
+    padding: 1% 0 1% 0;
+    font-size: 25px;
+  }
+  footer > .footercolumn > .link {
+    font-size: 25px;
+  }
+  footer > .link1 {
+    font-size: 25px;
+    padding: 1% 0 1% 0;
+  }
+}
+
+@-webkit-keyframes slide1 {
+  0% {
+    margin-left: 89%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 74%;
+    width: 14.5%;
+  }
+}
+
+@keyframes slide1 {
+  0% {
+    margin-left: 89%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 74%;
+    width: 14.5%;
   }
 }
 /*# sourceMappingURL=style_menu.css.map */
