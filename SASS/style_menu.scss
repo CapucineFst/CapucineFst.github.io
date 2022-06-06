@@ -40,7 +40,7 @@ h3
         color: rgb(53, 53, 53);
     }
 }
-#foodpicture
+#foodpicture /*Image du restaurant*/
 {
     z-index: 1;
     position: relative;
@@ -48,13 +48,12 @@ h3
     height: 250px;
     object-fit: cover;
 }
-#courses
+#courses /*Section du menu*/
 {
     box-sizing: border-box;
     z-index: 2;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     border-radius: 60px 60px 0 0;
     margin-top: -14.5%;
     padding: 10% 5% 20% 5%;
@@ -82,9 +81,9 @@ h3
 .fa-heart
 {
     position: absolute;
-    margin-top: 5%;
+    margin-top: 2.5%;
     margin-left: 80%;
-    font-size: 1.6em;
+    font-size: 25px;
     cursor: pointer;
     font-weight: 100;
     &:hover { /*animation du coeur au survol*/
@@ -98,7 +97,7 @@ h3
         }
     }
 }
-.title
+.title /*Entrees, plats, desserts*/
 {
     padding: 8% 0 2% 0;
     display: inline-block;
@@ -106,8 +105,8 @@ h3
     @include light;
     &::after {
         content: "";
-        width: 2.5rem;
-        height: 0.20rem;
+        width: 40px;
+        height: 3px;
         background-color:$color-third;
         position: absolute;
         left: 0;
@@ -131,9 +130,6 @@ h3
     & > .subtitle { /*accompagnements*/
         font-size: 14px;
         padding-top: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         @include light;
         @include dish;
     }
@@ -151,9 +147,7 @@ h3
     }
     &:hover { /*animation lors du survol*/
         & > .select { /*slide verte*/
-            animation-name: slide;
-            animation-duration: 0.3s;
-            animation-timing-function: linear;
+            animation-name: slide 0.3s linear;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -166,10 +160,7 @@ h3
             border-radius: 0 10px 10px 0;
             overflow: hidden;
             & > .fa-circle-check { /*coche blanche*/
-                animation-name: spin;
-                animation-duration: 0.3s;
-                animation-delay: 0.1s;
-                animation-timing-function: linear;
+                animation: spin 0.3s linear 0.1s;
                 display: block;
                 color: $white;
             }
@@ -183,6 +174,7 @@ h3
             @include light;
         }
         & > .price { /*prix*/
+            animation: slidein 0.3s linear;
             margin-left: 76%;
             @include extrabold;
         }
@@ -271,11 +263,11 @@ footer
 }
 @keyframes slidein {
     0%{
-        transform: translateX(10px);
+        margin-left: 85%;
 
     }
     100% {
-        transform: translateX(0px);
+        margin-left: 76%;
     }
 }
 @keyframes slide {
@@ -287,5 +279,113 @@ footer
     100% {
         margin-left: 74%;
         width: 13.5%;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 992px) /*Responsive tablette*/
+{
+    #brand 
+    {
+        font-size: 5vw;
+        padding: 2%;
+    }
+    #back_arrow /*flèche de retour à la page d'accueil*/
+    {
+        padding-left: 5%;
+        margin-top: -8%;
+        font-size: 3vw;
+    }
+    #foodpicture
+    {
+        padding-top: 3%;
+        height: 450px;
+    }
+    #courses /*Section du menu*/
+    {
+        padding: 5% 5% 18% 5%;
+    }
+    #head
+    {
+        & > #restaurantname {
+            font-size: 5.5vw;
+        }
+    }
+    .fa-heart
+    {
+        margin-top: 2%;
+        margin-left: 80%;
+        font-size: 4.5vw;
+    }
+    .title /*Entrees, plats, desserts*/
+    {
+        padding: 5% 0 2% 0;
+        font-size: 3vw;
+        &::after {
+            content: "";
+            width:9vw;
+            height: 0.5vh;
+        }
+    }
+    .food /*Reglage des articles*/
+    {
+        & > .main {
+            font-size: 25px;
+        }
+        & > .subtitle { /*accompagnements*/
+            font-size: 20px;
+        }
+        & > .price { /*prix*/
+            font-size: 22px;
+            margin-top: -23px;
+        }
+        & > .select {
+            & > .fa-circle-check {
+                display: none;
+                font-size:4vw ;
+            }
+        }
+        &:hover { /*animation lors du survol*/
+            & > .select { /*slide verte*/
+                animation: slide1 0.3s linear;
+                width: 14.7%;
+                height: 83.5px;
+                margin-top: -73px;
+            }
+        }
+    }
+    #button { /*bouton "commander"*/
+        margin-top: 12%;
+        & > a {
+            font-size: 3.5vw;
+            padding: 4% 11%;
+        }
+    }
+    footer {
+        padding: 3% 2% 5% 5%;
+            & > #footertitle {
+                font-size: 30px;
+                padding: 2% 0;
+            }
+            & > .footercolumn {
+                padding: 1% 0 1% 0;
+                font-size: 25px;
+                & > .link {
+                    font-size: 25px;
+                }
+            }
+            & > .link1 {
+                font-size: 25px;
+                padding: 1% 0 1% 0;
+            }
+        }
+}
+@keyframes slide1 {
+    0%{
+        margin-left: 89%;
+        width:0%;
+
+    }
+    100% {
+        margin-left: 74%;
+        width: 14.5%;
     }
 }

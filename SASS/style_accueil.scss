@@ -72,7 +72,7 @@ body
         &:hover {
             background-image: linear-gradient($color-main,$color-second);
             filter: brightness(110%);
-            box-shadow: 0px 5px 10px rgb(170, 170, 170);
+            box-shadow: 0px 5px 10px rgb(160, 160, 160);
         }
     }
 }
@@ -87,6 +87,11 @@ body
         padding-bottom: 4%;
         @include extrabold;
     }
+}
+.steps {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly;
     & > .stepnumber {
         z-index: 2;
         display: flex;
@@ -133,6 +138,11 @@ body
         @include flex-column;
         justify-content: space-around;
         align-content: space-around;
+    }
+    & > .sectionname {
+        font-size: 6vw;
+        padding-bottom: 4%;
+        @include extrabold;
     }
 }
 .article /*article de chaque restaurant*/
@@ -208,6 +218,7 @@ body
 footer
 {
     @include flex-column;
+    box-sizing: border-box;
     margin-top: 12%;
     background-color: rgb(53, 53, 53);
     padding: 3% 2% 10% 10%;
@@ -303,5 +314,137 @@ footer
     }
     100% {
         transform: translateY(0);
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 992px) /*Responsive tablette*/
+{
+    #brand 
+    {
+        font-size: 5vw;
+        padding: 2%;
+    }
+    .location {
+        & > #town {
+            font-size: 3vw;
+        }
+        & > .fa-location-dot {
+            font-size: 3vw;
+        }
+
+    }
+    .explore {
+        padding: 5% 0%;
+        & > #title {
+            padding: 0% 10% 2% 10%;
+            font-size: 4.5vw;
+        }
+        & > #subtitle {
+            padding: 1% 5% 8% 5%;
+            font-size: 4vw;
+        }
+    }
+    #button { /*bouton "explorer nos restaurants"*/
+        & > a {
+            font-size: 3vw;
+            padding: 2.5% 2.5%;
+        }
+        & > #button1 {
+            border-radius: 30px;
+        }
+    }
+    #manual /*fonctionnement du site*/
+    {
+        padding: 1% 6%;
+        & > .sectionname {
+            font-size: 4vw;
+            padding-bottom: 6%;
+        }
+    }
+    .steps {
+        & > .fa-solid {
+            font-size: 3.5vw;
+        }
+        & > .stepname {
+            padding: 3%;
+            font-size: 3vw;
+            margin-top: -5%;
+            margin-bottom: 10%;
+        }
+        & > .stepnumber {
+            width: 35px;
+            height: 35px;
+            margin-top: -2%;
+        }
+        & > .stepicons {
+            margin-top: -3%;
+        }
+        & >  #menuicon {
+            margin-left: 11%;
+            margin-top: -3%;
+            font-size: 3vw;
+        }
+    }
+    #restaurantchoice /*nom de la section contenant les restaurants*/
+    {
+        padding: 1% 6%;
+        & > .sectionname {
+            font-size: 4vw;
+            padding-bottom: 3%;
+        }
+    }
+    .article /*article de chaque restaurant*/
+    {
+        height: 310px;
+        margin-bottom: 6%;
+    }
+    .new /*texte nouveau sur les deux premiers restaurants*/
+    {
+        margin-top: -185px;
+        font-size: 2.5vw;
+        padding: 15px;
+        width: 15%;
+        margin-left: 65%;
+    }
+    .size /*taille des images*/
+    {
+        height: 200px;
+    }
+    .description /*description des restaurants*/
+    {
+        padding-left: 3%;
+        font-size: 25px;
+        & > .restaurantname {
+            margin-top: -1%;
+            padding-top: 3%;
+            @include extrabold;
+        }
+        & > .dishname {
+            margin-top: -3.5%;
+            @include light;
+        }
+    }
+    .fa-heart /*coeur pour ajouter aux favoris*/
+    {
+        margin-left: 75%;
+        margin-top: 7%;
+    }
+    footer {
+    padding: 3% 2% 5% 5%;
+    margin-top: 8%;
+        & > #footertitle {
+            font-size: 30px;
+            padding: 2% 0;
+        }
+        & > .footercolumn {
+            padding: 1% 0 1% 0;
+            font-size: 25px;
+            & > .link {
+                font-size: 25px;
+            }
+        }
+        & > .link1 {
+            font-size: 25px;
+            padding: 1% 0 1% 0;
+        }
     }
 }
