@@ -321,10 +321,6 @@ footer > .footercolumn > .link > a {
   color: white;
 }
 
-footer > .footercolumn > #addrestaurant {
-  padding-left: 4.5%;
-}
-
 footer > .footercolumn > .fa-solid {
   color: white;
 }
@@ -487,8 +483,8 @@ footer > .link1 > a {
     margin-top: 12%;
   }
   #button > a {
-    font-size: 3.5vw;
-    padding: 4% 11%;
+    font-size: 3vw;
+    padding: 3% 8%;
   }
   footer {
     padding: 3% 2% 5% 5%;
