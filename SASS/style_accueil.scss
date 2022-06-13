@@ -6,7 +6,7 @@ header
 }
 body
 {
-    max-width: 1440px;
+    max-width: 1920px;
     margin: auto;
     font-family:'Roboto',sans-serif;
 }
@@ -88,10 +88,11 @@ body
         @include extrabold;
     }
 }
-.steps {
+.choice {
     display: flex;
     flex-direction: column; 
     justify-content: space-evenly;
+    margin-top: -2%;
     & > .stepnumber {
         z-index: 2;
         display: flex;
@@ -104,6 +105,7 @@ body
         border-radius: 50%;
         margin-top: 10%;
         margin-left: -3%;
+        font-size: 3.5vw;
     }
     & > .stepicons {
         margin-left: 12%;
@@ -199,7 +201,7 @@ body
 .fa-heart /*coeur pour ajouter aux favoris*/
 {
     position: absolute;
-    margin-left: 70%;
+    margin-left: 80%;
     margin-top: 8%;
     font-size: 1.6em;
     cursor: pointer;
@@ -354,7 +356,7 @@ footer
             padding-bottom: 6%;
         }
     }
-    .steps {
+    .choice {
         & > .fa-solid {
             font-size: 3.5vw;
         }
@@ -368,6 +370,7 @@ footer
             width: 35px;
             height: 35px;
             margin-top: -2%;
+            font-size: 2vw;
         }
         & > .stepicons {
             margin-top: -3%;
@@ -479,36 +482,103 @@ footer
     }
     #manual /*fonctionnement du site*/
     {
-        padding: 1% 3%;
+        padding: 1% 3% 2% 3%;
         & > .sectionname {
             font-size: 2vw;
             padding-bottom: 5%;
         }
     }
     .steps {
-        margin: 0 5%;
-        & > .fa-solid {
-            font-size: 1.8vw;
-        }
-        & > .stepname {
-            padding: 2%;
-            font-size: 1.5vw;
-            margin-top: -3%;
-            margin-bottom: 8%;
-        }
-        & > .stepnumber {
-            width: 50px;
-            height: 50px;
-            margin-top: -4%;
-            font-size: 1.5vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .choice {
+            & > .stepnumber {
+            width: 2.5vw;
+            height: 2.5vw;
+            margin-left: 3%;
+            margin-top: -7.5%;
+            font-size: 1vw;
         }
         & > .stepicons {
-            margin-top: -2%;
+            font-size: 1.5vw;
+            margin-top: -5%;
+            margin-left: 20%;
         }
-        & >  #menuicon {
-            margin-left: 12%;
-            margin-top: -2%;
-            font-size: 1.3vw;
+        & > .stepname {
+            box-sizing: border-box;
+            width: 18.5em;
+            padding: 4% 3%;
+            border-radius: 15px;
+            font-size: 1.5vw;
+            margin-top: -7%;
+            margin-left: 9%;
+        }
+        & > #menuicon {
+            font-size: 1.2vw;
+            margin-top: -5%;
+            margin-left: 20%;
         }
     }
+    #restaurantchoice /*nom de la section contenant les restaurants*/
+    {
+        padding: 0 3% 1% 3%;
+        & > #place {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        & > .sectionname {
+            font-size: 2vw;
+            padding-bottom: 3%;
+        }
+    }
+    .article /*article de chaque restaurant*/
+    {
+        height: 250px;
+        width: 45%;
+    }
+    .description /*description des restaurants*/
+    {
+        padding-left: 2%;
+        font-size: 20px;
+        & > .restaurantname {
+            margin-top: -13px;
+            padding-top: 3%;
+            @include extrabold;
+        }
+        & > .dishname {
+            margin-top: -20px;
+            @include light;
+        }
+    }
+    .fa-heart /*coeur pour ajouter aux favoris*/
+    {
+        margin-left: 88%;
+        margin-top: 5%;
+    }
+    footer {
+        padding: 1% 2% 3% 3%;
+        margin-top: 25px;
+            & > #footertitle {
+                font-size: 30px;
+                padding: 2% 0 1% 0;
+            }
+            & > .footercolumn {
+                padding: 0.5% 0;
+                font-size: 25px;
+                & > .link {
+                    font-size: 25px;
+                    padding: 0 1.3%;
+                }
+                & > #addrestaurant {
+                    padding: 0 2%;
+                }
+            }
+            & > .link1 {
+                font-size: 25px;
+                padding: 0.5% 0;
+            }
+        }
 }
