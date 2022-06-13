@@ -5,7 +5,6 @@ header {
 }
 
 body {
-  max-width: 1440px;
   margin: auto;
   font-family: 'Roboto',sans-serif;
 }
@@ -125,7 +124,7 @@ body {
   font-weight: 700;
 }
 
-.steps {
+.choice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,9 +135,10 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-top: -2%;
 }
 
-.steps > .stepnumber {
+.choice > .stepnumber {
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -156,15 +156,16 @@ body {
   border-radius: 50%;
   margin-top: 10%;
   margin-left: -3%;
+  font-size: 3.5vw;
 }
 
-.steps > .stepicons {
+.choice > .stepicons {
   margin-left: 12%;
   margin-top: -4%;
   color: #7e7e7e;
 }
 
-.steps > .stepname {
+.choice > .stepname {
   padding: 6% 4% 6% 4%;
   border-radius: 20px;
   font-size: 4.5vw;
@@ -175,7 +176,7 @@ body {
   text-align: center;
 }
 
-.steps > #menuicon {
+.choice > #menuicon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,7 +185,7 @@ body {
   color: #7e7e7e;
 }
 
-.steps > #purple {
+.choice > #purple {
   color: #9356DC;
 }
 
@@ -296,7 +297,7 @@ body {
 
 .fa-heart {
   position: absolute;
-  margin-left: 70%;
+  margin-left: 80%;
   margin-top: 8%;
   font-size: 1.6em;
   cursor: pointer;
@@ -528,24 +529,25 @@ footer > .link1 > a {
     font-size: 4vw;
     padding-bottom: 6%;
   }
-  .steps > .fa-solid {
+  .choice > .fa-solid {
     font-size: 3.5vw;
   }
-  .steps > .stepname {
+  .choice > .stepname {
     padding: 3%;
     font-size: 3vw;
     margin-top: -5%;
     margin-bottom: 10%;
   }
-  .steps > .stepnumber {
+  .choice > .stepnumber {
     width: 35px;
     height: 35px;
     margin-top: -2%;
+    font-size: 2vw;
   }
-  .steps > .stepicons {
+  .choice > .stepicons {
     margin-top: -3%;
   }
-  .steps > #menuicon {
+  .choice > #menuicon {
     margin-left: 11%;
     margin-top: -3%;
     font-size: 3vw;
@@ -645,37 +647,108 @@ footer > .link1 > a {
     border-radius: 30px;
   }
   #manual {
-    padding: 1% 3%;
+    padding: 1% 3% 2% 3%;
   }
   #manual > .sectionname {
     font-size: 2vw;
     padding-bottom: 5%;
   }
   .steps {
-    margin: 0 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .steps > .fa-solid {
-    font-size: 1.8vw;
+  .choice > .stepnumber {
+    width: 40px;
+    height: 40px;
+    margin-left: 3%;
+    margin-top: -7.5%;
+    font-size: 1.2vw;
   }
-  .steps > .stepname {
-    padding: 2%;
+  .choice > .stepicons {
+    margin-top: -5%;
+    margin-left: 20%;
+  }
+  .choice > .stepname {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 18.5em;
+    padding: 4% 3%;
+    border-radius: 15px;
     font-size: 1.5vw;
-    margin-top: -3%;
-    margin-bottom: 8%;
+    margin-top: -7%;
+    margin-left: 9%;
   }
-  .steps > .stepnumber {
-    width: 50px;
-    height: 50px;
-    margin-top: -4%;
-    font-size: 1.5vw;
+  .choice > #menuicon {
+    margin-top: -5%;
+    margin-left: 20%;
   }
-  .steps > .stepicons {
-    margin-top: -2%;
+  #restaurantchoice {
+    padding: 0 3% 1% 3%;
   }
-  .steps > #menuicon {
-    margin-left: 12%;
-    margin-top: -2%;
-    font-size: 1.3vw;
+  #restaurantchoice > #place {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #restaurantchoice > .sectionname {
+    font-size: 2vw;
+    padding-bottom: 3%;
+  }
+  .article {
+    height: 250px;
+    width: 45%;
+  }
+  .description {
+    padding-left: 2%;
+    font-size: 20px;
+  }
+  .description > .restaurantname {
+    margin-top: -13px;
+    padding-top: 3%;
+    font-weight: 700;
+  }
+  .description > .dishname {
+    margin-top: -20px;
+    font-weight: 300;
+  }
+  .fa-heart {
+    margin-left: 88%;
+    margin-top: 5%;
+  }
+  footer {
+    padding: 1% 2% 3% 3%;
+    margin-top: 25px;
+  }
+  footer > #footertitle {
+    font-size: 30px;
+    padding: 2% 0 1% 0;
+  }
+  footer > .footercolumn {
+    padding: 0.5% 0;
+    font-size: 25px;
+  }
+  footer > .footercolumn > .link {
+    font-size: 25px;
+    padding: 0 1.3%;
+  }
+  footer > .footercolumn > #addrestaurant {
+    padding: 0 2%;
+  }
+  footer > .link1 {
+    font-size: 25px;
+    padding: 0.5% 0;
   }
 }
 /*# sourceMappingURL=style_accueil.css.map */
