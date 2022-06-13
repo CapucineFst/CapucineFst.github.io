@@ -5,7 +5,7 @@ header {
 }
 
 body {
-  max-width: 1440px;
+  max-width: 1920px;
   margin: auto;
   font-family: 'Roboto',sans-serif;
 }
@@ -65,7 +65,7 @@ h3 {
   border-radius: 60px 60px 0 0;
   margin-top: -14.5%;
   padding: 10% 5% 20% 5%;
-  background-color: #f6f6f6;
+  background-color: white;
 }
 
 #courses > #starter {
@@ -193,8 +193,8 @@ h3 {
 
 .food:hover > .select {
   /*slide verte*/
-  -webkit-animation-name: slide 0.3s linear;
-          animation-name: slide 0.3s linear;
+  -webkit-animation: slide 0.3s linear;
+          animation: slide 0.3s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,6 +291,9 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 12%;
   background-color: #353535;
   padding: 3% 2% 10% 10%;
 }
@@ -319,6 +322,10 @@ footer > .footercolumn > .link {
 footer > .footercolumn > .link > a {
   text-decoration: none;
   color: white;
+}
+
+footer > .footercolumn > #addrestaurant {
+  padding-left: 4.5%;
 }
 
 footer > .footercolumn > .fa-solid {
@@ -525,6 +532,162 @@ footer > .link1 > a {
   100% {
     margin-left: 74%;
     width: 14.5%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #brand {
+    font-size: 2.5vw;
+    padding: 1%;
+  }
+  #back_arrow {
+    padding-left: 2%;
+    margin-top: -4.5%;
+    font-size: 1.5vw;
+  }
+  #foodpicture {
+    padding-top: 2%;
+    height: 450px;
+  }
+  #courses {
+    margin-top: -4%;
+    padding: 2% 5% 10% 5%;
+  }
+  #courses > #starter {
+    -webkit-animation: fadein 2s;
+            animation: fadein 2s;
+  }
+  #courses > #maincourse {
+    -webkit-animation: fadein 4s;
+            animation: fadein 4s;
+  }
+  #courses > #dessert {
+    -webkit-animation: fadein 6s;
+            animation: fadein 6s;
+  }
+  #head > #restaurantname {
+    font-size: 3vw;
+  }
+  .fa-heart {
+    margin-top: 0;
+    margin-left: 85%;
+    font-size: 3vw;
+  }
+  .title {
+    padding: 2% 0 1% 0;
+    font-size: 1.5vw;
+  }
+  .title::after {
+    content: "";
+    width: 4vw;
+    height: 0.5vh;
+  }
+  .design {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
+  }
+  .design > .food {
+    width: 30%;
+    margin-right: 3%;
+  }
+  .design > .food:hover {
+    /*animation lors du survol*/
+  }
+  .design > .food:hover > .select {
+    /*slide verte*/
+    -webkit-animation: slide2 0.3s linear;
+            animation: slide2 0.3s linear;
+    width: 5%;
+    margin-left: 21.5%;
+  }
+  .design > .food:hover > .main {
+    /*plat*/
+    width: 72%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+  }
+  .design > .food:hover > .subtitle {
+    /*accompagnement*/
+    width: 72%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 300;
+  }
+  .design > .food:hover > .price {
+    /*prix*/
+    -webkit-animation: slidein 0.3s linear;
+            animation: slidein 0.3s linear;
+    margin-left: 76%;
+    font-weight: 700;
+  }
+  #button {
+    /*bouton "commander"*/
+    margin-top: 8%;
+  }
+  #button > a {
+    font-size: 1.5vw;
+    padding: 2% 6%;
+  }
+  footer {
+    padding: 1% 2% 3% 3%;
+    margin-top: 15px;
+  }
+  footer > #footertitle {
+    font-size: 30px;
+    padding: 2% 0 1% 0;
+  }
+  footer > .footercolumn {
+    padding: 0.5% 0;
+    font-size: 25px;
+  }
+  footer > .footercolumn > .link {
+    font-size: 25px;
+    padding: 0 1.3%;
+  }
+  footer > .footercolumn > #addrestaurant {
+    padding: 0 2%;
+  }
+  footer > .link1 {
+    font-size: 25px;
+    padding: 0.5% 0;
+  }
+}
+
+@-webkit-keyframes slide2 {
+  0% {
+    margin-left: 26.5%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 21.5%;
+    width: 5%;
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    margin-left: 26.5%;
+    width: 0%;
+  }
+  100% {
+    margin-left: 21.5%;
+    width: 5%;
   }
 }
 /*# sourceMappingURL=style_menu.css.map */
