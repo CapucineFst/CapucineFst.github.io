@@ -39,3 +39,18 @@ $icon-color:rgb(126, 126, 126);
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+header
+{
+    font-family: 'Shrikhand',sans-serif;
+}
+body
+{
+    max-width: 1920px;
+    margin: auto;
+    font-family:'Roboto',sans-serif;
+}
+.maxwidth
+{
+    width: 100%;
+}

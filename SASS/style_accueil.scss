@@ -1,584 +1,592 @@
-@import 'style.scss';
-header
-{
-    font-family: 'Shrikhand',sans-serif;
-    @include center;
+@import "style.scss";
+header {
+  @include center;
 }
-body
-{
-    max-width: 1920px;
-    margin: auto;
-    font-family:'Roboto',sans-serif;
+#brand {
+  /*placement du nom du site*/ 
+  padding: 4%;
+  font-size: 9vw;
 }
-.maxwidth /*classe permettant aux items de prendre tout l'espace*/
-{
-    width: 100%;
-}
-#brand /*placement du nom du site*/
-{
-    padding: 4%;
-    font-size: 9vw;
-}
-.location /*placement de la ville et de l'icone*/
-{
-    display: flex;
-    justify-content: center;
-    background-color: rgb(234, 234, 234);
-    box-shadow: inset 0px 8px 10px -8px rgb(206, 206, 206);
-    & > #town {
-        padding: 4% 3%;
-        @include bold;
-        @include center;
-    }
-    & > .fa-location-dot {
-        margin-top: 4%;
-    }
-}
-.explore /*présentation de l'entreprise*/
-{
-    @include flex-column;
-    justify-content: center;
-    padding: 8% 0;
-    & > * {
-        @include center;
-    }
-    & > #title {
-        padding: 0% 20% 2% 20%;
-        font-size: 6vw;
-        @include extrabold;
-    }
-    & > #subtitle {
-        padding: 2% 7% 8% 7%;
-        font-size: 5vw;
-        @include light;
-    }
-}
-#button { /*bouton "explorer nos restaurants"*/
-    & > a {
-        text-decoration: none;
-        color: $white;
-        font-size: 4vw;
-        padding: 4% 4%;
-    }
-    & > #button1 {
-        cursor: pointer;
-        border: none;
-        margin: 0 auto;
-        width: 60%;
-        background-image: linear-gradient($color-main,$color-second) ;
-        border-radius: 35px;
-        @include bold;
-        box-shadow: 0px 5px 10px rgb(197,197,197);
-        &:hover {
-            background-image: linear-gradient($color-main,$color-second);
-            filter: brightness(110%);
-            box-shadow: 0px 5px 10px rgb(160, 160, 160);
-        }
-    }
-}
-#manual /*fonctionnement du site*/
-{
-    @include flex-column;
-    justify-content:flex-start;
-    padding: 8% 6% 0 6%;
+.location {
+  /*placement de la ville et de l'icone*/ 
+  display: flex;
+  justify-content: center;
+  background-color: rgb(234, 234, 234);
+  box-shadow: inset 0px 8px 10px -8px rgb(206, 206, 206);
+  & > #town {
+    padding: 4% 3%;
     @include bold;
-    & > .sectionname {
-        font-size: 6vw;
-        padding-bottom: 4%;
-        @include extrabold;
+    @include center;
+  }
+  & > .fa-location-dot {
+    margin-top: 4%;
+  }
+}
+.explore {
+  /*présentation de l'entreprise*/
+  @include flex-column;
+  justify-content: center;
+  padding: 8% 0;
+  & > * {
+    @include center;
+  }
+  & > #title {
+    padding: 0% 20% 2% 20%;
+    font-size: 6vw;
+    @include extrabold;
+  }
+  & > #subtitle {
+    padding: 2% 7% 8% 7%;
+    font-size: 5vw;
+    @include light;
+  }
+}
+#button {
+  /*bouton "explorer nos restaurants"*/
+  & > a {
+    text-decoration: none;
+    color: $white;
+    font-size: 4vw;
+    padding: 4% 4%;
+  }
+  & > #button1 {
+    cursor: pointer;
+    border: none;
+    margin: 0 auto;
+    width: 60%;
+    background-image: linear-gradient($color-main, $color-second);
+    border-radius: 35px;
+    @include bold;
+    box-shadow: 0px 5px 10px rgb(197, 197, 197);
+    &:hover {
+      background-image: linear-gradient($color-main, $color-second);
+      filter: brightness(110%);
+      box-shadow: 0px 5px 10px rgb(160, 160, 160);
     }
+  }
+}
+#manual {  
+  /*fonctionnement du site*/
+  @include flex-column;
+  justify-content: flex-start;
+  padding: 8% 6% 0 6%;
+  @include bold;
+  & > .sectionname {
+    font-size: 6vw;
+    padding-bottom: 4%;
+    @include extrabold;
+  }
 }
 .choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: -2%;
+  & > .stepnumber {
+    z-index: 2;
     display: flex;
-    flex-direction: column; 
-    justify-content: space-evenly;
-    margin-top: -2%;
-    & > .stepnumber {
-        z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $white;
-        background-color:$color-main;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        margin-top: 10%;
-        margin-left: -3%;
-        font-size: 3.5vw;
-    }
-    & > .stepicons {
-        margin-left: 12%;
-        margin-top: -4%;
-        color: $icon-color;
-    }
-    & > .stepname {
-        padding: 6% 4% 6% 4%;
-        border-radius: 20px;
-        font-size: 4.5vw;
-        margin-top: -9.5%;
-        margin-bottom: 5%;
-        @include main-boxshadow;
-        @include center;
-    }
-    & > #menuicon {
-        display: flex;
-        margin-left: 10%;
-        margin-top: -3.5%;
-        color: $icon-color;
-    }
-    & > #purple {
-        color: $color-main;
-    }
-}
-#restaurantchoice /*nom de la section contenant les restaurants*/
-{
-    box-sizing: border-box;
-    @include flex-column;
-    padding: 8% 5% 0 5%;
-    & > #place {
-        @include flex-column;
-        justify-content: space-around;
-        align-content: space-around;
-    }
-    & > .sectionname {
-        font-size: 6vw;
-        padding-bottom: 4%;
-        @include extrabold;
-    }
-}
-.article /*article de chaque restaurant*/
-{
-    position: relative;
-    box-sizing: border-box;
-    @include flex-column;
-    border-radius: 20px;
-    height: 250px;
-    margin-bottom: 6%;
-    @include main-boxshadow;
-    & > a {
-        text-decoration: none;
-        color: black;
-    }
-}
-.new /*texte nouveau sur les deux premiers restaurants*/
-{
-    position: absolute;
-    display: block;
-    text-align: center;
-    padding: 2.5%;
-    width: 20%;
-    background: rgb(153, 226, 208);
-    color: $textnew;
-    top: 5%;
-    left: 70%;
-    border-radius: 2px;
-    @include bold;
-}
-.size /*taille des images*/
-{
-    height: 170px;
-    justify-content:center;
-    align-items: center;
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-}
-.description /*description des restaurants*/
-{
-    @include flex-column;
-    padding-left: 5%;
-    font-size: 4.5vw;
-    & > .restaurantname {
-        margin-top: -1%;
-        padding-top: 4%;
-        @include extrabold;
-    }
-    & > .dishname {
-        margin-top: -5%;
-        @include light;
-    }
-}
-.fa-heart /*coeur pour ajouter aux favoris*/
-{
-    position: absolute;
-    margin-left: 80%;
-    margin-top: 8%;
-    font-size: 1.6em;
-    cursor: pointer;
-    font-weight: 100;
-    &:hover { /*animation du coeur au survol*/
-        &::before {
-            transition: all .1s ease-in-out;
-            background-clip: text;
-            -webkit-background-clip: text;
-            font-weight: 900;
-            background-image: linear-gradient($color-main, $color-second);
-            -webkit-text-fill-color: transparent;
-        }
-    }
-}
-footer
-{
-    @include flex-column;
-    box-sizing: border-box;
-    margin-top: 12%;
-    background-color: rgb(53, 53, 53);
-    padding: 3% 2% 10% 10%;
-    & > #footertitle {
-        font-family: 'Shrikhand',sans-serif;
-        color: $white;
-        font-size: 5vw;
-        padding: 3% 0;
-    }
-    & > .footercolumn {
-        display: flex;
-        padding: 2% 0 1% 0;
-        & > .link {
-            font-size: 4.5vw;
-            padding: 0 3%;
-            @include bold;
-            cursor: pointer;
-            & > a {
-                @include whitelink;
-            }
-        }
-        & > #addrestaurant {
-            padding-left: 4.5%;
-        }
-        & > .fa-solid {
-            color: $white;
-        }
-    }
-    & > .link1 {
-        font-size: 4.5vw;
-        padding: 2% 0 1% 0;
-        @include light;
-        cursor: pointer;
-        & > a {
-            @include whitelink;
-        }
-    }
-}
-#spinner
-{
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    animation: loader .3s 1s both;
-    z-index: 3;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    & > #spinnerbox {
-        display: flex;
-        width: 100px;
-        justify-content: space-between;
-        & > .item {
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            animation: jumpy 1s;
-        }
-        & > #item1 {
-            background-color: $color-main;
-        }
-        & > #item2 {
-            background-color: $color-second;
-            animation-delay: 0.2s;
-        }
-        & > #item3 {
-            background-color: $color-third;
-            animation-delay: 0.4s;
-        }
+    align-items: center;
+    color: $white;
+    background-color: $color-main;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: 10%;
+    margin-left: -3%;
+    font-size: 3.5vw;
+  }
+  & > .stepicons {
+    margin-left: 12%;
+    margin-top: -4%;
+    color: $icon-color;
+  }
+  & > .stepname {
+    padding: 6% 4% 6% 4%;
+    border-radius: 20px;
+    font-size: 4.5vw;
+    margin-top: -9.5%;
+    margin-bottom: 5%;
+    @include main-boxshadow;
+    @include center;
+  }
+  & > #menuicon {
+    display: flex;
+    margin-left: 10%;
+    margin-top: -3.5%;
+    color: $icon-color;
+  }
+  & > #purple {
+    color: $color-main;
+  }
+}
+#restaurantchoice {
+  /*nom de la section contenant les restaurants*/
+  box-sizing: border-box;
+  @include flex-column;
+  padding: 8% 5% 0 5%;
+  & > #place {
+    @include flex-column;
+    justify-content: space-around;
+    align-content: space-around;
+  }
+  & > .sectionname {
+    font-size: 6vw;
+    padding-bottom: 4%;
+    @include extrabold;
+  }
+}
+.article {
+  /*article de chaque restaurant*/
+  position: relative;
+  box-sizing: border-box;
+  @include flex-column;
+  border-radius: 20px;
+  height: 250px;
+  margin-bottom: 6%;
+  @include main-boxshadow;
+  & > a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.new {
+  /*texte nouveau sur les deux premiers restaurants*/
+  position: absolute;
+  display: block;
+  text-align: center;
+  padding: 2.5%;
+  width: 20%;
+  background: rgb(153, 226, 208);
+  color: $textnew;
+  top: 20px;
+  right: 20px;
+  border-radius: 2px;
+  @include bold;
+}
+.size {
+  /*taille des images*/
+  height: 170px;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.description {
+  /*description des restaurants*/
+  @include flex-column;
+  padding-left: 5%;
+  font-size: 4.5vw;
+  & > .restaurantname {
+    margin-top: -1%;
+    padding-top: 4%;
+    @include extrabold;
+  }
+  & > .dishname {
+    margin-top: -5%;
+    @include light;
+  }
+}
+.fa-heart {
+  /*coeur pour ajouter aux favoris*/
+  position: absolute;
+  margin-left: 80%;
+  margin-top: 8%;
+  font-size: 1.6em;
+  cursor: pointer;
+  font-weight: 100;
+  &:hover {
+    /*animation du coeur au survol*/
+    &::before {
+      transition: all 0.1s ease-in-out;
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-weight: 900;
+      background-image: linear-gradient($color-main, $color-second);
+      -webkit-text-fill-color: transparent;
     }
+  }
+}
+footer {
+  @include flex-column;
+  box-sizing: border-box;
+  margin-top: 12%;
+  background-color: rgb(53, 53, 53);
+  padding: 3% 0% 10% 10%;
+  & > #footertitle {
+    font-family: "Shrikhand", sans-serif;
+    color: $white;
+    font-size: 5vw;
+    padding: 3% 0;
+  }
+  & > .footercolumn {
+    display: flex;
+    padding: 2% 0 1% 0;
+    & > .link {
+      /*proposer un restaurant et devenir partenaire*/
+      font-size: 18px;
+      padding-left: 10px;
+      @include bold;
+      cursor: pointer;
+      & > a {
+        @include whitelink;
+      }
+    }
+    & > #addrestaurant {
+      /*proposer un restaurant*/
+      padding-left: 15px;
+    }
+    & > .fa-solid {
+      color: $white;
+    }
+  }
+  & > .link1 {
+    /*Mentions légales et contact*/
+    font-size: 18px;
+    padding: 2% 0 1% 0;
+    @include light;
+    cursor: pointer;
+    & > a {
+      @include whitelink;
+    }
+  }
+}
+#spinner {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: loader 0.3s 1s both;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > #spinnerbox {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    & > .item {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      animation: jumpy 1s;
+    }
+    & > #item1 {
+      background-color: $color-main;
+    }
+    & > #item2 {
+      background-color: $color-second;
+      animation-delay: 0.2s;
+    }
+    & > #item3 {
+      background-color: $color-third;
+      animation-delay: 0.4s;
+    }
+  }
 }
 @keyframes loader {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        z-index: -1;
-    }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
 }
 @keyframes jumpy {
-    0% {
-        transform: translateY(0);
-    }
-    25% {
-        transform: translateY(100%);
-    }
-    75% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(100%);
+  }
+  75% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-@media screen and (min-width: 481px) and (max-width: 1024px) /*Responsive tablette*/
-{
-    #brand 
-    {
-        font-size: 5vw;
-        padding: 2%;
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  /*Responsive tablette*/ 
+  #brand {
+    font-size: 5vw;
+    padding: 2%;
+  }
+  .location {
+    font-size: 3vw;
+  }
+  .explore {
+    padding: 5% 0%;
+    & > #title {
+      padding: 0% 10% 2% 10%;
+      font-size: 4.5vw;
     }
-    .location {
-        font-size: 3vw;
+    & > #subtitle {
+      padding: 1% 5% 8% 5%;
+      font-size: 4vw;
     }
-    .explore {
-        padding: 5% 0%;
-        & > #title {
-            padding: 0% 10% 2% 10%;
-            font-size: 4.5vw;
-        }
-        & > #subtitle {
-            padding: 1% 5% 8% 5%;
-            font-size: 4vw;
-        }
+  }
+  #button {
+    /*bouton "explorer nos restaurants"*/
+    & > a {
+      font-size: 3vw;
+      padding: 2.5% 2.5%;
     }
-    #button { /*bouton "explorer nos restaurants"*/
-        & > a {
-            font-size: 3vw;
-            padding: 2.5% 2.5%;
-        }
-        & > #button1 {
-            border-radius: 30px;
-        }
+    & > #button1 {
+      border-radius: 30px;
     }
-    #manual /*fonctionnement du site*/
-    {
-        padding: 1% 6%;
-        & > .sectionname {
-            font-size: 4vw;
-            padding-bottom: 6%;
-        }
+  }
+  #manual {
+    /*fonctionnement du site*/
+    padding: 1% 6%;
+    & > .sectionname {
+      font-size: 4vw;
+      padding-bottom: 6%;
     }
-    .choice {
-        & > .fa-solid {
-            font-size: 3.5vw;
-        }
-        & > .stepname {
-            padding: 3%;
-            font-size: 3vw;
-            margin-top: -5%;
-            margin-bottom: 10%;
-        }
-        & > .stepnumber {
-            width: 35px;
-            height: 35px;
-            margin-top: -2%;
-            font-size: 2vw;
-        }
-        & > .stepicons {
-            margin-top: -3%;
-        }
-        & >  #menuicon {
-            margin-left: 11%;
-            margin-top: -3%;
-            font-size: 3vw;
-        }
+  }
+  .choice {
+    & > .fa-solid {
+      font-size: 3.5vw;
     }
-    #restaurantchoice /*nom de la section contenant les restaurants*/
-    {
-        padding: 1% 6%;
-        & > .sectionname {
-            font-size: 4vw;
-            padding-bottom: 3%;
-        }
+    & > .stepname {
+      padding: 3%;
+      font-size: 3vw;
+      margin-top: -5%;
+      margin-bottom: 10%;
     }
-    .article /*article de chaque restaurant*/
-    {
-        height: 310px;
-        margin-bottom: 6%;
+    & > .stepnumber {
+      width: 35px;
+      height: 35px;
+      margin-top: -2%;
+      font-size: 2vw;
     }
-    .new /*texte nouveau sur les deux premiers restaurants*/
-    {
-        font-size: 2.5vw;
-        padding: 15px;
-        width: 15%;
-        left: 75%;
+    & > .stepicons {
+      margin-top: -3%;
     }
-    .size /*taille des images*/
-    {
-        height: 200px;
+    & > #menuicon {
+      margin-left: 11%;
+      margin-top: -3%;
+      font-size: 3vw;
     }
-    .description /*description des restaurants*/
-    {
-        padding-left: 3%;
-        font-size: 25px;
-        & > .restaurantname {
-            margin-top: -1%;
-            padding-top: 3%;
-            @include extrabold;
-        }
-        & > .dishname {
-            margin-top: -3.5%;
-            @include light;
-        }
+  }
+  #restaurantchoice {
+    /*nom de la section contenant les restaurants*/
+    padding: 1% 6%;
+    & > .sectionname {
+      font-size: 4vw;
+      padding-bottom: 3%;
     }
-    .fa-heart /*coeur pour ajouter aux favoris*/
-    {
-        margin-left: 85%;
-        margin-top: 7%;
+  }
+  .article {
+    /*article de chaque restaurant*/
+    height: 310px;
+    margin-bottom: 6%;
+  }
+  .new {
+    /*texte nouveau sur les deux premiers restaurants*/
+    font-size: 2.5vw;
+    padding: 10px;
+    width: 15%;
+  }
+  .size {
+    /*taille des images*/
+    height: 200px;
+  }
+  .description {
+    /*description des restaurants*/
+    padding-left: 3%;
+    font-size: 25px;
+    & > .restaurantname {
+      margin-top: -1%;
+      padding-top: 3%;
+      @include extrabold;
     }
-    footer {
-    padding: 3% 2% 5% 5%;
+    & > .dishname {
+      margin-top: -3.5%;
+      @include light;
+    }
+  }
+  .fa-heart {
+    /*coeur pour ajouter aux favoris*/
+    margin-left: 85%;
+    margin-top: 7%;
+  }
+  footer {
+    padding: 3% 0% 5% 5%;
     margin-top: 8%;
-        & > #footertitle {
-            font-size: 30px;
-            padding: 2% 0;
-        }
-        & > .footercolumn {
-            padding: 1% 0 1% 0;
-            font-size: 25px;
-            & > .link {
-                font-size: 25px;
-            }
-        }
-        & > .link1 {
-            font-size: 25px;
-            padding: 1% 0 1% 0;
-        }
+    & > #footertitle {
+      font-size: 30px;
+      padding: 2% 0;
     }
+    & > .footercolumn {
+      padding: 1% 0;
+      font-size: 25px;
+      & > .link {
+        /*proposer un restaurant et devenir partenaire*/
+        font-size: 25px;
+        padding-left: 10px;
+      }
+      & > #addrestaurant {
+        /*proposer un restaurant*/
+        padding-left: 20px;
+      }
+    }
+    & > .link1 {
+      /*Mentions légales et contact*/
+      font-size: 25px;
+      padding: 1% 0;
+    }
+  }
 }
-@media screen and (min-width: 1025px) /*Responsive ordinateur*/
-{
-    #brand 
-    {
-        font-size: 2.5vw;
-        padding: 1%;
+@media screen and (min-width: 1025px) {
+  /*Responsive ordinateur*/
+  #brand {
+    font-size: 2.5vw;
+    padding: 1%;
+  }
+  .location {
+    font-size: 1.3vw;
+    & > #town {
+      padding: 1.5% 1.5%;
     }
-    .location {
-        font-size: 1.3vw;
-        & > #town {
-            padding: 1.5% 1.5%;
-        }
-        & > .fa-location-dot {
-            margin-top: 1.5%;
-        }
+    & > .fa-location-dot {
+      margin-top: 1.5%;
     }
-    .explore { /*Présentation*/
-        padding: 2% 0% 2% 0%;
-        & > #title {
-            padding: 0% 35% 1% 35%;
-            font-size: 2vw;
-        }
-        & > #subtitle {
-            padding: 0% 20% 3% 20%;
-            font-size: 1.5vw;
-        }
+  }
+  .explore {
+    /*Présentation*/
+    padding: 2% 0% 2% 0%;
+    & > #title {
+      padding: 0% 35% 1% 35%;
+      font-size: 2vw;
     }
-    #button { /*bouton "explorer nos restaurants"*/
-        & > a {
-            font-size: 1.2vw;
-            padding: 1.2% 1.2%;
-        }
-        & > #button1 {
-            border-radius: 30px;
-        }
+    & > #subtitle {
+      padding: 0% 20% 3% 20%;
+      font-size: 1.5vw;
     }
-    #manual /*fonctionnement du site*/
-    {
-        padding: 1% 3% 2% 3%;
-        & > .sectionname {
-            font-size: 2vw;
-            padding-bottom: 5%;
-        }
+  }
+  #button {
+    /*bouton "explorer nos restaurants"*/
+    & > a {
+      font-size: 1.2vw;
+      padding: 1.2% 1.2%;
     }
-    .steps {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+    & > #button1 {
+      border-radius: 30px;
     }
-    .choice {
-            & > .stepnumber {
-            width: 2.5vw;
-            height: 2.5vw;
-            margin-left: 3%;
-            margin-top: -7.5%;
-            font-size: 1vw;
-        }
-        & > .stepicons {
-            font-size: 1.5vw;
-            margin-top: -5%;
-            margin-left: 20%;
-        }
-        & > .stepname {
-            box-sizing: border-box;
-            width: 18.5em;
-            padding: 4% 3%;
-            border-radius: 15px;
-            font-size: 1.5vw;
-            margin-top: -7%;
-            margin-left: 9%;
-        }
-        & > #menuicon {
-            font-size: 1.2vw;
-            margin-top: -5%;
-            margin-left: 20%;
-        }
+  }
+  #manual {
+    /*fonctionnement du site*/ 
+    padding: 1% 3% 2% 3%;
+    & > .sectionname {
+      font-size: 2vw;
+      padding-bottom: 5%;
     }
-    #restaurantchoice /*nom de la section contenant les restaurants*/
-    {
-        padding: 0 3% 1% 3%;
-        & > #place {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        & > .sectionname {
-            font-size: 2vw;
-            padding-bottom: 3%;
-        }
+  }
+  .steps {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .choice {
+    & > .stepnumber {
+      width: 2.5vw;
+      height: 2.5vw;
+      margin-left: 3%;
+      margin-top: -7.5%;
+      font-size: 1vw;
     }
-    .article /*article de chaque restaurant*/
-    {
-        height: 250px;
-        width: 45%;
+    & > .stepicons {
+      font-size: 1.5vw;
+      margin-top: -5%;
+      margin-left: 20%;
     }
-    .description /*description des restaurants*/
-    {
-        padding-left: 2%;
-        font-size: 20px;
-        & > .restaurantname {
-            margin-top: -13px;
-            padding-top: 3%;
-            @include extrabold;
-        }
-        & > .dishname {
-            margin-top: -20px;
-            @include light;
-        }
+    & > .stepname {
+      box-sizing: border-box;
+      width: 18.5em;
+      padding: 4% 3%;
+      border-radius: 15px;
+      font-size: 1.5vw;
+      margin-top: -7%;
+      margin-left: 9%;
     }
-    .fa-heart /*coeur pour ajouter aux favoris*/
-    {
-        margin-left: 88%;
-        margin-top: 5%;
+    & > #menuicon {
+      font-size: 1.2vw;
+      margin-top: -5%;
+      margin-left: 20%;
     }
-    footer {
-        padding: 1% 2% 3% 3%;
-        margin-top: 25px;
-            & > #footertitle {
-                font-size: 30px;
-                padding: 2% 0 1% 0;
-            }
-            & > .footercolumn {
-                padding: 0.5% 0;
-                font-size: 25px;
-                & > .link {
-                    font-size: 25px;
-                    padding: 0 1.3%;
-                }
-                & > #addrestaurant {
-                    padding: 0 2%;
-                }
-            }
-            & > .link1 {
-                font-size: 25px;
-                padding: 0.5% 0;
-            }
-        }
+  }
+  #restaurantchoice {
+    /*nom de la section contenant les restaurants*/
+    padding: 0 3% 1% 3%;
+    & > #place {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    & > .sectionname {
+      font-size: 2vw;
+      padding-bottom: 3%;
+    }
+  }
+  .article {
+    /*article de chaque restaurant*/
+    height: 250px;
+    width: 45%;
+  }
+  .new {
+    /*texte nouveau sur les deux premiers restaurants*/
+    font-size: 25px;
+    padding: 10px;
+  }
+  .description {
+    /*description des restaurants*/
+    padding-left: 2%;
+    font-size: 20px;
+    & > .restaurantname {
+      margin-top: -13px;
+      padding-top: 3%;
+      @include extrabold;
+    }
+    & > .dishname {
+      margin-top: -20px;
+      @include light;
+    }
+  }
+  .fa-heart {
+    /*coeur pour ajouter aux favoris*/
+    margin-left: 88%;
+    margin-top: 5%;
+  }
+  footer {
+    padding: 1% 0% 3% 3%;
+    margin-top: 25px;
+    & > #footertitle {
+      font-size: 30px;
+      padding: 2% 0 1% 0;
+    }
+    & > .footercolumn {
+      padding: 0.5% 0;
+      font-size: 25px;
+      & > .link {
+        /*proposer un restaurant et devenir partenaire*/
+        font-size: 25px;
+        padding-left: 10px;
+      }
+      & > #addrestaurant {
+        /*proposer un restaurant*/
+        padding-left: 20px;
+      }
+    }
+    & > .link1 {
+      /*Mentions légales et contact*/
+      font-size: 25px;
+      padding-left: 5px;
+      padding-top: 0.5%;
+      padding-bottom: 0;
+    }
+  }
 }
